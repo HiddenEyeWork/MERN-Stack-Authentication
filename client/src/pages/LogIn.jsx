@@ -11,11 +11,11 @@ const Login = () => {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            var result = await login({ variables: { username, password } });
-            console.log(result);
-            // if(data.login.token != ''){
-            //     alert("Signin success!");
-            // }
+            await login({ variables: { username, password } });
+            console.log(data);
+            if(data.login.token !== ''){
+                alert('Login Success!');
+            }
         } catch (err) {
             console.error("Error Loggin in:", err);
         }

@@ -39,7 +39,6 @@ const resolvers = {
 	Mutation: {
 		createUser: async (_, { username, email, password }) => {
 			const existingUser = await User.findOne({ username });
-			console.log(username, email, password);
 			if(existingUser){
 				console.log('User already exists!');
 				throw new Error('User already exists!');
@@ -59,10 +58,10 @@ const resolvers = {
 								{ expiresIn: '1h' }
 							);
 
-			return { 
+			return {
 				userId: result.id,
-				token, 
-				msg: "Signup Success!" 
+				token,
+				msg: "Signup Success!"
 			}
 		},
 
