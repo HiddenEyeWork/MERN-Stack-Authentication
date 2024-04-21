@@ -60,9 +60,9 @@ const resolvers = {
 							);
 
 			return { 
-				userId: result.id, 
-				token, msg: 
-				"Signup Success!" 
+				userId: result.id,
+				token, 
+				msg: "Signup Success!" 
 			}
 		},
 
